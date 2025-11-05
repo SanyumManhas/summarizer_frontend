@@ -25,7 +25,7 @@ export default function Login()
                 iv //encrypted password
             }
 
-            const response = await axios.post(`http://localhost:8080/api/login`, loginData, {withCredentials: true});
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/login`, loginData, {withCredentials: true});
             if(response.data.success){
                 toast.success("login success");
                 setuserdata(response.data.udata);
