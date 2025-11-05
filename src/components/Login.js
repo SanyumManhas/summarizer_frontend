@@ -3,7 +3,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { encryptPassword } from './encryptionUtils-20250415115254';
 import { Link, useNavigate } from 'react-router-dom';
-import ReCAPTCHA from "react-google-recaptcha";
+// import ReCAPTCHA from "react-google-recaptcha";
 import { UserContext } from '../App';
 
 
@@ -20,7 +20,7 @@ export default function Login()
         e.preventDefault();
         const {encryptedData,iv} = await encryptPassword(pass);
         
-        if(human){
+        // if(human){
             const loginData = {
                 em, //email
                 encryptedData,
@@ -37,17 +37,17 @@ export default function Login()
             else{
                 toast.warn("login failed");
             }
-        }
-        else{
-            toast.warn("Please verify you are human!");
-        }
+        // }
+        // else{
+        //     toast.warn("Please verify you are human!");
+        // }
     }
     
-    const [human,sethuman] = useState(null);
+    // const [human,sethuman] = useState(null);
     
-    function onChange(value) {
-        sethuman(value);
-    }
+    // function onChange(value) {
+    //     sethuman(value);
+    // }
 
     return(
         <div className="h-full bg-black">
@@ -100,13 +100,13 @@ export default function Login()
                             </div>
                         </div>
 
-                    <div class="w-full">
-                        <ReCAPTCHA
-                            class="w-full"
-                            sitekey="6LcSiQMsAAAAAALgFYgxYI3W0V4XC-PKM3U4a_rJ"
-                            onChange={onChange}
-                        />
-                    </div>
+                    // <div class="w-full">
+                    //     <ReCAPTCHA
+                    //         class="w-full"
+                    //         sitekey="6LcSiQMsAAAAAALgFYgxYI3W0V4XC-PKM3U4a_rJ"
+                    //         onChange={onChange}
+                    //     />
+                    // </div>
 
                     <div>
                         <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Sign in</button>
