@@ -103,7 +103,7 @@ export default function Login()
                     <div class="w-full">
                         <ReCAPTCHA
                             class="w-full"
-                            sitekey="6Le7EUYrAAAAAHOLEiQTfu8Prtjnvja-NJ-d_6gv"
+                            sitekey="6LcSiQMsAAAAAALgFYgxYI3W0V4XC-PKM3U4a_rJ"
                             onChange={onChange}
                         />
                     </div>
